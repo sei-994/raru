@@ -62,59 +62,7 @@ const Topics = () => {
                   </main>
                 </section>
               </div>
-              <div className="sju-aside-layout-sub">
-                <dl className="sju-def">
-                  <dt>category</dt>
-                  <dd>
-                    <ul className="sju-tag-list">
-                      <li>
-                        <a href="#" className="sju-tag sm ">
-                          press
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="sju-tag sm ">
-                          talent news
-                        </a>
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl className="sju-def">
-                  <dt>pick up</dt>
-                  <dd>
-                    <a href="#" className="topics-pickup-item">
-                      <img src="/images/news_placeholder.jpg" alt="" />
-                      <div className="topics-pickup-item-container">
-                        <div className="topics-pickup-item-lead">
-                          <span className="sju-tag sm">talent news</span>
-                        </div>
-                        <time className="topics-pickup-item-time">
-                          2025.7.14
-                        </time>
-                        <h3 className="topics-pickup-item-title">
-                          ABEMA「今日、好きになりました。夏休み編2025」出演
-                        </h3>
-                      </div>
-                    </a>
-                    <a href="#" className="topics-pickup-item">
-                      <img src="/images/news_placeholder.jpg" alt="" />
-                      <div className="topics-pickup-item-container">
-                        <div className="topics-pickup-item-lead">
-                          <span className="sju-tag sm">talent news</span>
-                        </div>
-                        <time className="topics-pickup-item-time">
-                          2025.7.9
-                        </time>
-                        <h3 className="topics-pickup-item-title">
-                          「ビッグマック」CM出演
-                        </h3>
-                      </div>
-                    </a>
-                    
-                  </dd>
-                </dl>
-              </div>
+              
             </div>
           </div>
         </div>
