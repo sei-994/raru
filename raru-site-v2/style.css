@@ -1,0 +1,624 @@
+/*
+  Base styles for the RARU website
+
+  The CSS aims to mirror the light, airy feeling of the reference design. It makes
+  use of large backgrounds, generous spacing and simple typography. Colours are
+  kept minimal: a predominately blue palette reminiscent of the provided logo and
+  hero image, coupled with soft neutrals for contrast. The layout is fully
+  responsive and adapts gracefully from desktop to mobile screens.
+*/
+
+/* Colour palette */
+:root {
+  --primary-color: #32a0c2;       /* soft aqua blue used in backgrounds */
+  --secondary-color: #e9f7fb;     /* very light blue for section backgrounds */
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --accent-color: #109dc5;       /* deeper blue for interactive elements */
+}
+
+/* Global resets and typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/*
+  Sidebar navigation replaces the old header. It stays fixed on the left side and
+  provides quick links to each section. The brand is rendered as text to
+  preserve high resolution on any display. The sidebar collapses slightly on
+  smaller screens for better usability.
+*/
+/* Sidebar: fixed vertical navigation on the left, with a subtle translucent background. */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Brand at the top of the sidebar: lowercase serif text in pastel blue. */
+.side-brand {
+  font-size: 2.8rem;
+  font-family: 'Georgia', serif;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05rem;
+}
+
+.side-nav ul {
+  list-style: none;
+}
+
+.side-nav li {
+  margin-bottom: 1rem;
+}
+
+.side-nav a {
+  text-transform: lowercase;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.side-nav a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 160px;
+    padding: 1.5rem 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .side-brand {
+    font-size: 2rem;
+  }
+  .main {
+    margin-left: 160px;
+    width: calc(100% - 160px);
+  }
+}
+
+/* Main content is offset to account for the sidebar width */
+.main {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 160px;
+    width: calc(100% - 160px);
+  }
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: url('mv_placeholder_pc.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--text-light);
+  position: relative;
+  /* subtle bottom border line to separate hero from the next section */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('mv_placeholder_sp.jpg');
+  }
+}
+
+.hero .hero-inner {
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.hero .scroll-cue {
+  position: static;
+  width: 32px;
+  opacity: 0.9;
+  animation: bounce 2s infinite;
+}
+
+/* Container for the scroll cue text and icon */
+.scroll-cue-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.1rem;
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+.scroll-text {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hero overlay: small news teaser at bottom right of the hero */
+.hero-overlay {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+.hero-overlay-date {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+.hero-overlay-images {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.hero-overlay-images img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.hero-overlay-text {
+  line-height: 1.4;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Section styling */
+section {
+  padding: 4rem 1.5rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--primary-color);
+  margin: 0.5rem auto 0;
+}
+
+/* About */
+.about {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Override headings for sections that mirror the reference site. These headings are
+   lowercase with letter spacing and no underline bar. */
+.topics h2,
+.talent-section h2,
+.audition-section h2,
+.contact-section h2 {
+  text-transform: lowercase;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: static;
+}
+.topics h2::after,
+.talent-section h2::after,
+.audition-section h2::after,
+.contact-section h2::after {
+  display: none;
+}
+
+/* Topics grid styling */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Reset topic card styling.  Each topic item uses flex to place the vertical date next to the content */
+.topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Vertical date along the left side of each topic card */
+.topic-date {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  letter-spacing: 0.1rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+/* Container for the topic image and text */
+.topic-content {
+  flex: 1;
+}
+
+.topic-content img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.topic-content h3 {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.topic-content p {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.5;
+}
+.topics-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+.topics-more a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+.topics-more a:hover {
+  text-decoration: underline;
+}
+
+/* Talent grid styling */
+.talent-section {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.talent-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.talent-name {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.talent-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+.talent-more a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+.talent-more a:hover {
+  text-decoration: underline;
+}
+
+/* Fixed column layout for talents on larger screens.  On smaller screens, allow
+   auto-fit behaviour to ensure cards stack nicely. */
+@media (max-width: 768px) {
+  .talent-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Audition section styling */
+.audition-section {
+  background: #ffffff;
+  color: var(--text-dark);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.audition-section h2 {
+  margin-bottom: 1.5rem;
+}
+.audition-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.audition-section button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.audition-section button:hover {
+  background: #0c8cae;
+}
+
+/* Contact section styling */
+.contact-section {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.contact-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.sns-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.sns-links img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+.sns-links img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer styling */
+.footer {
+  border-top: 1px solid #eee;
+  background-color: #ffffff;
+  color: #666666;
+  font-size: 0.8rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* News */
+.news {
+  background-color: #ffffff;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.news-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: var(--secondary-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.news-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 1rem;
+  color: var(--text-dark);
+}
+
+.news-content .date {
+  font-size: 0.8rem;
+  color: #555555;
+}
+
+.news-content h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.news-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.news .more {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.news .more a {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.news .more a:hover {
+  text-decoration: underline;
+}
+
+
+.talent .more a {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.talent .more a:hover {
+  text-decoration: underline;
+}
+
+/* Audition */
+.audition {
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.audition h2::after {
+  background: var(--text-light);
+}
+
+.audition p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.audition button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--text-light);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.audition button:hover {
+  background: #f2f2f2;
+}
+
+/* Contact */
+.contact {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.contact p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.sns-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sns-links img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.sns-links img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+}
+
+/* Smooth section spacing adjustments for narrow screens */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero .tagline {
+    font-size: 1rem;
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+}
