@@ -11,7 +11,7 @@ const Topics = () => {
         <link rel="canonical" href="https://seju.tokyo/topics/" />
       </Head>
       <div className="sju-page about-page">
-        <div className="sju-page topics-page">
+        
       
           <div className="sju-page-container">
             <div className="sju-aside-layout">
@@ -65,7 +65,6 @@ const Topics = () => {
               
             </div>
           </div>
-      </div>
     </>
   );
 };
