@@ -111,20 +111,7 @@ const Topics = () => {
                         </h3>
                       </div>
                     </a>
-                    <a href="#" className="topics-pickup-item">
-                      <img src="/images/news_placeholder.jpg" alt="" />
-                      <div className="topics-pickup-item-container">
-                        <div className="topics-pickup-item-lead">
-                          <span className="sju-tag sm">talent news</span>
-                        </div>
-                        <time className="topics-pickup-item-time">
-                          2025.7.3
-                        </time>
-                        <h3 className="topics-pickup-item-title">
-                          プリクラ機「NICO MAKE」イメージモデル就任
-                        </h3>
-                      </div>
-                    </a>
+                    
                   </dd>
                 </dl>
               </div>
