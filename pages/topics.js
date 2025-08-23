@@ -12,7 +12,7 @@ const Topics = () => {
       </Head>
       <div className="sju-page about-page">
         <div className="sju-page topics-page">
-      <div className="sju-page-inner">
+      
           <div className="sju-page-container">
             <div className="sju-aside-layout">
               <div className="sju-aside-layout-main">
@@ -65,7 +65,6 @@ const Topics = () => {
               
             </div>
           </div>
-        </div>
       </div>
     </>
   );
