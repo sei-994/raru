@@ -14,15 +14,32 @@ const AdminDashboard = () => {
   });
   const [mainImageFile, setMainImageFile] = useState(null);
   const [carouselImageFiles, setCarouselImageFiles] = useState([]);
+  const [talents, setTalents] = useState([]); // New state for talents
 
   useEffect(() => {
     const password = prompt('パスワードを入力してください');
     if (password === 'password') {
       setIsAuthenticated(true);
+      fetchTalents(); // Fetch talents when authenticated
     } else {
       alert('パスワードが違います。');
     }
   }, []);
+
+  // New function to fetch talents
+  const fetchTalents = async () => {
+    try {
+      const res = await fetch('/api/talents');
+      if (res.ok) {
+        const data = await res.json();
+        setTalents(data);
+      } else {
+        console.error('Failed to fetch talents');
+      }
+    } catch (error) {
+      console.error('Error fetching talents:', error);
+    }
+  };
 
   const handleTalentChange = (e) => {
     const { name, value } = e.target;
@@ -100,12 +117,34 @@ const AdminDashboard = () => {
         setCarouselImageFiles([]);
         document.getElementById('mainImageInput').value = null;
         document.getElementById('carouselImagesInput').value = null;
+        fetchTalents(); // Re-fetch talents after adding
       } else {
         const errorData = await res.json();
         alert(`タレントの追加に失敗しました: ${errorData.message}`);
       }
     } catch (error) {
       alert(`エラー: ${error.message}`);
+    }
+  };
+
+  // New function to handle talent deletion
+  const handleDeleteTalent = async (id) => {
+    if (window.confirm('本当にこのタレントを削除しますか？')) {
+      try {
+        const res = await fetch(`/api/talents?id=${id}`, {
+          method: 'DELETE',
+        });
+
+        if (res.ok) {
+          alert('タレントを削除しました');
+          fetchTalents(); // Re-fetch talents after deleting
+        } else {
+          const errorData = await res.json();
+          alert(`タレントの削除に失敗しました: ${errorData.message}`);
+        }
+      } catch (error) {
+        alert(`エラー: ${error.message}`);
+      }
     }
   };
 
@@ -142,6 +181,41 @@ const AdminDashboard = () => {
 
           <button type="submit" className="btn btn-primary">タレント追加</button>
         </form>
+      </section>
+
+      <section className="mb-5">
+        <h2 className="my-4">既存タレント</h2>
+        {talents.length === 0 ? (
+          <p>タレントはまだ登録されていません。</p>
+        ) : (
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>スラッグ</th>
+                <th>アクション</th>
+              </tr>
+            </thead>
+            <tbody>
+              {talents.map(talent => (
+                <tr key={talent.id}>
+                  <td>{talent.id}</td>
+                  <td>{talent.name}</td>
+                  <td>{talent.slug}</td>
+                  <td>
+                    <button 
+                      className="btn btn-danger btn-sm" 
+                      onClick={() => handleDeleteTalent(talent.id)}
+                    >
+                      削除
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </section>
       {/* Article Section remains the same... */}
     </div>
