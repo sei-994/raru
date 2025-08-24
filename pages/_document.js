@@ -18,12 +18,12 @@ export default function Document() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <title>RARU</title>
         <meta name="description" content="「私らしさ」は、円を描く。今をときめくZ世代のプロダクション＆メディア" />
-        <link rel="canonical" href="https://seju.tokyo/" />
+        <link rel="canonical" href="https://raru.tokyo/" />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="RARU" />
         <meta property="og:description" content="「私らしさ」は、円を描く。今をときめくZ世代のプロダクション＆メディア" />
-        <meta property="og:url" content="https://seju.tokyo/" />
+        <meta property="og:url" content="https://raru.tokyo/" />
         <meta property="og:site_name" content="RARU" />
         <meta property="og:image" content="/images/RARU ロゴ.png" />
         <meta property="og:image:width" content="1200" />
@@ -31,7 +31,7 @@ export default function Document() {
         <meta property="og:image:type" content="image/png" />
         <meta name="twitter:image" content="/images/RARU ロゴ.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content=" @SejuTokyo" />
+        <meta name="twitter:site" content=" @RaruTokyo" />
         {/* Typekit Fonts */}
         <link rel="stylesheet" href="https://use.typekit.net/lbp4mob.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
