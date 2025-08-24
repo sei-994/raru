@@ -99,36 +99,14 @@ const Contact = () => {
                       <p>お問い合わせ種別</p>
                     </dt>
                     <dd>
-                      <p>
-                        <span className="wpcf7-form-control-wrap" data-name="type">
-                          <span className="wpcf7-form-control wpcf7-radio">
-                            <span className="wpcf7-list-item first">
-                              <label>
-                                <input type="radio" name="type" value="プロモーション" checked={formData.type === 'プロモーション'} onChange={handleChange} />
-                                <span className="wpcf7-list-item-label">プロモーション</span>
-                              </label>
-                            </span>
-                            <span className="wpcf7-list-item">
-                              <label>
-                                <input type="radio" name="type" value="メディア取材/出演" checked={formData.type === 'メディア取材/出演'} onChange={handleChange} />
-                                <span className="wpcf7-list-item-label">メディア取材/出演</span>
-                              </label>
-                            </span>
-                            <span className="wpcf7-list-item">
-                              <label>
-                                <input type="radio" name="type" value="イベント出演" checked={formData.type === 'イベント出演'} onChange={handleChange} />
-                                <span className="wpcf7-list-item-label">イベント出演</span>
-                              </label>
-                            </span>
-                            <span className="wpcf7-list-item last">
-                              <label>
-                                <input type="radio" name="type" value="その他" checked={formData.type === 'その他'} onChange={handleChange} />
-                                <span className="wpcf7-list-item-label">その他</span>
-                              </label>
-                            </span>
-                          </span>
-                        </span>
-                      </p>
+                      <div class="sju-single-select">
+                        <select name="type" value={formData.type} onChange={handleChange}>
+                          <option value="プロモーション">プロモーション</option>
+                          <option value="メディア取材/出演">メディア取材/出演</option>
+                          <option value="イベント出演">イベント出演</option>
+                          <option value="その他">その他</option>
+                        </select>
+                      </div>
                     </dd>
                   </dl>
                   <dl className="sju-field required">
