@@ -3786,16 +3786,17 @@ textarea {
   padding-top: 141px;
 }
 
-/* --- Custom Fixes v5 --- */
+/* --- Custom Fixes v6 --- */
 
 /* 1. Talent Name Display Fix: Aligned with contact button */
 .talents-detail-mv-caption {
   writing-mode: horizontal-tb !important; 
   white-space: nowrap; 
+  color: #000;
   
   /* Rotate and position */
   position: absolute !important;
-  bottom: 0 !important; /* Align to the bottom like the contact button */
+  bottom: 25px !important; /* Align with contact button's center */
   left: 40px !important;   /* Position from the left edge */
   transform: rotate(-90deg) !important;
   transform-origin: bottom left !important; /* Pivot around bottom left */
@@ -3803,7 +3804,7 @@ textarea {
   /* Resetting other properties */
   width: auto !important;
   background: none !important;
-  padding: 10px 0 !important; /* Add some padding */
+  padding: 0 !important;
   justify-content: initial !important;
   font-size: 40px; 
 }

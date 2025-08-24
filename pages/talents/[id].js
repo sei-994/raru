@@ -30,8 +30,8 @@ const TalentDetail = () => {
       </Head>
       <div className="sju-page talents-detail-page">
         <header className="talents-detail-mv jsc-mv">
-          <strong className="talents-detail-mv-caption">{talent.name}</strong>
           <div className="talents-detail-mv-inner">
+            <strong className="talents-detail-mv-caption">{talent.name}</strong>
             <ul className="talents-detail-mv-list jsc-mv-list">
               {talent.mv_images && talent.mv_images.map((image, index) => (
                 <li key={index} className={index === activeImageIndex ? 'is-active' : ''}>
