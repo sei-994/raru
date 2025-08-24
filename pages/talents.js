@@ -29,8 +29,8 @@ const Talents = () => {
                                 <div className="talent-card-thumbnail-inner" style={{ backgroundImage: `url('${talent.image}')` }}>
                                   <span className="talent-card-thumbnail-caption">
                                     <dl>
-                                      <dt>{talent.name}</dt>
-                                      <dd>TALENT</dd>
+                                      <dt>{talent.name_en}</dt>
+                                      <dd>{talent.name_ja}</dd>
                                     </dl>
                                   </span>
                                 </div>

@@ -2,7 +2,8 @@
   "talents": [
     {
       "id": 1,
-      "name": "Avec Star",
+      "name_ja": "アベックスター",
+      "name_en": "Avec Star",
       "slug": "avec-star",
       "image": "/images/20240614-151354_HD.jpg",
       "mv_images": [
