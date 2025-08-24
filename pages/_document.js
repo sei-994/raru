@@ -25,10 +25,11 @@ export default function Document() {
         <meta property="og:description" content="「私らしさ」は、円を描く。今をときめくZ世代のプロダクション＆メディア" />
         <meta property="og:url" content="https://seju.tokyo/" />
         <meta property="og:site_name" content="RARU" />
-        <meta property="og:image" content="https://seju.tokyo/wp-content/uploads/2023/07/seju_seo.jpg" />
+        <meta property="og:image" content="/images/RARU ロゴ.png" />
         <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="675" />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:image" content="/images/RARU ロゴ.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content=" @SejuTokyo" />
         {/* Typekit Fonts */}
