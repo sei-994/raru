@@ -282,14 +282,14 @@ html, body {
 
 .sju-page {
   padding-right: 232px;
-  padding-left: 232px;
+  /* padding-left: 232px; */
   min-height: calc(100vh - 98px);
   background-color: transparent;
 }
 @media all and (max-width: 1900px) {
   .sju-page {
     padding-right: 160px;
-    padding-left: 160px;
+    /* padding-left: 160px; */
   }
 }
 @media all and (max-width: 1680px) {
