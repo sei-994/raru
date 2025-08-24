@@ -3786,21 +3786,26 @@ textarea {
   padding-top: 141px;
 }
 
-/* --- Custom Fixes v3 --- */
+/* --- Custom Fixes v4 --- */
 
 /* 1. Talent Name Display Fix: Rotated Text */
 .talents-detail-mv-caption {
   writing-mode: horizontal-tb !important; 
   white-space: nowrap; 
-  transform: rotate(-90deg) !important;
-  transform-origin: left top;
-  position: absolute;
-  top: 100px; /* Adjust as needed */
-  left: 30px; /* Adjust as needed */
+  
+  /* Centering and rotating */
+  position: absolute !important;
+  top: 50% !important;
+  left: 20px !important; /* Position from the left edge */
+  transform: translateY(-50%) rotate(-90deg) !important;
+  transform-origin: center !important;
+
+  /* Resetting other properties */
   width: auto !important;
   background: none !important;
   padding: 0 !important;
   justify-content: initial !important;
+  font-size: 40px; /* Slightly smaller for rotated text */
 }
 
 /* 2. SNS Logo Size Fix */
