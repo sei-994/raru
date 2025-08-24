@@ -654,7 +654,7 @@ textarea { padding: 12px 20px 12px; }
 .talents-detail-mv-control-item:hover:not(.is-active) { opacity: 0.7; }
 .talents-detail-mv-control-item + .talents-detail-mv-control-item { margin-left: 14px; }
 
-  .talents-detail-mv-caption { display: flex; flex-shrink: 0; width: 70px; writing-mode: vertical-rl; font-size: 50px; line-height: 1; font-family: 'brandon-grotesque'; font-weight: 500; letter-spacing: 0.1em; white-space: nowrap; }
+  .talents-detail-mv-caption { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 20px; font-size: 50px; line-height: 1; font-family: 'brandon-grotesque'; font-weight: 500; letter-spacing: 0.1em; white-space: nowrap; }
  @media all and (max-width: 1360px) { .talents-detail-mv-caption { width: 52px; font-size: 36px; } }
  @media all and (max-width: 1023px) { .talents-detail-mv-caption { width: 32px; font-size: 30px; font-weight: 400; } }
  @media all and (max-width: 767px) { .talents-detail-mv-caption { position: absolute; top: 0; left: 0; bottom: 0; height: calc(100% - 28px); width: 28px; font-size: 22px; justify-content: flex-end; align-items: center; padding-bottom: 8px; background: rgba(255, 255, 255, 0.7); z-index: 3; } }
@@ -705,7 +705,7 @@ textarea { padding: 12px 20px 12px; }
 .talents-detail-sns-list > li > a.talents-detail-sns-link { width: 30px; }
  @media all and (max-width: 767px) { .talents-detail-sns-link { width: 48px; } }
 .talents-detail-sns-link:hover { opacity: 0.8; }
-.talents-detail-sns-link img { width: 30px; height: 30px; }
+.talents-detail-sns-link img { width: 24px; height: 24px; }
 
 .talents-detail-aside { width: 308px; flex-shrink: 0; }
  @media all and (max-width: 1520px) { .talents-detail-aside { width: 256px; } }
