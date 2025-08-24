@@ -6,9 +6,9 @@ const Talents = () => {
   return (
     <>
       <Head>
-        <title>talent | seju</title>
-        <meta name="description" content="seju所属タレントの一覧ページです。" />
-        <link rel="canonical" href="https://seju.tokyo/talents/" />
+        <title>talent | raru</title>
+        <meta name="description" content="raru所属タレントの一覧ページです。" />
+        <link rel="canonical" href="https://raru.tokyo/talents/" />
       </Head>
       <div class="sju-page about-page">
         <div className="sju-page-inner">

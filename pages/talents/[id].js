@@ -25,7 +25,7 @@ const TalentDetail = () => {
   return (
     <>
       <Head>
-        <title>{talent.name} | seju</title>
+        <title>{talent.name} | raru</title>
         <meta name="description" content={talent.profile} />
       </Head>
       <div className="sju-page talents-detail-page">

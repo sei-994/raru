@@ -14,7 +14,7 @@ const ArticleDetail = () => {
   return (
     <>
       <Head>
-        <title>{article.title} | seju</title>
+        <title>{article.title} | raru</title>
         <meta name="description" content={article.content} />
       </Head>
       <div className="sju-page about-page">

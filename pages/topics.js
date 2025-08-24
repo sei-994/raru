@@ -6,9 +6,9 @@ const Topics = () => {
   return (
     <>
       <Head>
-        <title>topics | seju</title>
-        <meta name="description" content="topicsの一覧ページです。seju所属タレントの情報を発信します。" />
-        <link rel="canonical" href="https://seju.tokyo/topics/" />
+        <title>topics | raru</title>
+        <meta name="description" content="topicsの一覧ページです。raru所属タレントの情報を発信します。" />
+        <link rel="canonical" href="https://raru.tokyo/topics/" />
       </Head>
       <div className="sju-page about-page">
         

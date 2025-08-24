@@ -1,7 +1,7 @@
-var SEJU = SEJU || {}
-SEJU.SHARED = {}
+var RARU = RARU || {}
+RARU.SHARED = {}
 
-SEJU.UTILS = {
+RARU.UTILS = {
   closest: function(node, selector) {
     return (node.closest || function(_selector) {
       do {
@@ -65,7 +65,7 @@ var throttle = (function(callback, interval = 128) {
   }
 })();
 
-SEJU.SHARED.HOME_MV_SLIDER = {
+RARU.SHARED.HOME_MV_SLIDER = {
   SLIDE_CHANGE_MS: 3200,
   init: function () {
     if (!this.setParams()) return
@@ -93,7 +93,7 @@ SEJU.SHARED.HOME_MV_SLIDER = {
       isActiveWindow = true
     })
     if (this.elMvControl) {
-      SEJU.UTILS.loopElements(this.elMvControl.children, function (el, index) {
+      RARU.UTILS.loopElements(this.elMvControl.children, function (el, index) {
         el.addEventListener('click', function (e) {
           e.preventDefault()
           _self.slideNext(index)
@@ -102,7 +102,7 @@ SEJU.SHARED.HOME_MV_SLIDER = {
       })
     }
 
-    SEJU.UTILS.loopElements(this.elMvItems, function (el) {
+    RARU.UTILS.loopElements(this.elMvItems, function (el) {
       var touchStartX = 0
       var handleSwipe = function (diff) {
         if (diff > 0 && diff > 200) {
@@ -156,13 +156,13 @@ SEJU.SHARED.HOME_MV_SLIDER = {
       }
     }
 
-    SEJU.UTILS.loopElements(this.elMvItems, function (el) {
+    RARU.UTILS.loopElements(this.elMvItems, function (el) {
       el.classList.remove('is-active')
     })
     this.elMvItems[this.currentIndex].classList.add('is-active')
 
     if (this.elMvControl) {
-      SEJU.UTILS.loopElements(this.elMvControl.children, function (el, i) {
+      RARU.UTILS.loopElements(this.elMvControl.children, function (el, i) {
         el.classList.remove('is-active')
       })
       this.elMvControl.children[this.currentIndex].classList.add('is-active')
@@ -174,13 +174,13 @@ SEJU.SHARED.HOME_MV_SLIDER = {
   }
 }
 
-SEJU.SHARED.INFINITE_SCROLL = function () {
-  SEJU.UTILS.request('GET', '/wp-json/wp/v2/get_custom_posts?post_type=talents&posts_per_page=2&offset=4')
-  SEJU.UTILS.request('GET', '/wp-json/wp/v2/get_custom_posts?post_type=topics&posts_per_page=2&offset=4')
+RARU.SHARED.INFINITE_SCROLL = function () {
+  RARU.UTILS.request('GET', '/wp-json/wp/v2/get_custom_posts?post_type=talents&posts_per_page=2&offset=4')
+  RARU.UTILS.request('GET', '/wp-json/wp/v2/get_custom_posts?post_type=topics&posts_per_page=2&offset=4')
 }
-SEJU.SHARED.INFINITE_SCROLL.prototype = {}
+RARU.SHARED.INFINITE_SCROLL.prototype = {}
 
-SEJU.SHARED.HOME_CONTROL = {
+RARU.SHARED.HOME_CONTROL = {
   init: function () {
     if (!this.setParams()) return
     this.bindEvents()
@@ -223,7 +223,7 @@ SEJU.SHARED.HOME_CONTROL = {
   },
 }
 
-SEJU.SHARED.ABOUT_CONTROL = {
+RARU.SHARED.ABOUT_CONTROL = {
   init: function () {
     if (!this.setParams()) return
     this.bindEvents()
@@ -260,7 +260,7 @@ SEJU.SHARED.ABOUT_CONTROL = {
         touchStartY = null
       }
     })
-    SEJU.UTILS.loopElements(this.elMvControl.children, function (el, index) {
+    RARU.UTILS.loopElements(this.elMvControl.children, function (el, index) {
       el.addEventListener('click', function (e) {
         e.preventDefault()
         _self.slide(index)
@@ -290,19 +290,19 @@ SEJU.SHARED.ABOUT_CONTROL = {
     if (index < 0 || index >= this.elMvList.children.length) return;
     this.currentIndex = index
 
-    SEJU.UTILS.loopElements(this.elMvList.children, function (el) {
+    RARU.UTILS.loopElements(this.elMvList.children, function (el) {
       el.classList.remove('is-active')
     })
     this.elMvList.children[this.currentIndex].classList.add('is-active')
 
-    SEJU.UTILS.loopElements(this.elMvControl.children, function (el) {
+    RARU.UTILS.loopElements(this.elMvControl.children, function (el) {
       el.classList.remove('is-active')
     })
     this.elMvControl.children[this.currentIndex].classList.add('is-active')
   }
 }
 
-SEJU.SHARED.CONTACT_CONTROL = {
+RARU.SHARED.CONTACT_CONTROL = {
   init: function () {
     this.elContact = document.getElementById('jsi-contact')
     if (!this.elContact) return
@@ -316,7 +316,7 @@ SEJU.SHARED.CONTACT_CONTROL = {
   },
   toggleTalentField: function (isActive) {
     var input = this.elContact.querySelector('[name="talent"]')
-    var field = SEJU.UTILS.closest(input, '.sju-field')
+    var field = RARU.UTILS.closest(input, '.sju-field')
     if (!field) return
 
     if (isActive) {
@@ -435,7 +435,7 @@ SEJU.SHARED.CONTACT_CONTROL = {
     })
 
     document.addEventListener('click', function (e) {
-      if (!SEJU.UTILS.closest(e.target, '#' + id)) {
+      if (!RARU.UTILS.closest(e.target, '#' + id)) {
         elOverlay.classList.remove('is-active')
       }
     })
@@ -446,7 +446,7 @@ SEJU.SHARED.CONTACT_CONTROL = {
       elOverlay.classList.remove('is-active')
     })
 
-    var queryTalent = SEJU.UTILS.getQuery('talent')
+    var queryTalent = RARU.UTILS.getQuery('talent')
     if (queryTalent) {
       selected.push(queryTalent)
       updateInputValue()
@@ -454,7 +454,7 @@ SEJU.SHARED.CONTACT_CONTROL = {
   }
 }
 
-SEJU.SHARED.ENTRY_CONTROL = {
+RARU.SHARED.ENTRY_CONTROL = {
   init: function () {
     this.elEntry = document.getElementById('jsi-entry')
     if (!this.elEntry) return
@@ -592,7 +592,7 @@ SEJU.SHARED.ENTRY_CONTROL = {
   }
 }
 
-SEJU.SHARED.SP_NAV = {
+RARU.SHARED.SP_NAV = {
   init: function () {
     if (!this.setParams()) return
     this.bindEvents()
@@ -630,7 +630,7 @@ SEJU.SHARED.SP_NAV = {
   }
 }
 
-SEJU.SHARED.IMAGE_VIEWER = {
+RARU.SHARED.IMAGE_VIEWER = {
   init: function () {
     if (!this.setParams()) return
     this.bindEvents()
@@ -644,7 +644,7 @@ SEJU.SHARED.IMAGE_VIEWER = {
   },
   bindEvents: function () {
     var _self = this
-    SEJU.UTILS.loopElements(this.viewerTriggers, function (el, index) {
+    RARU.UTILS.loopElements(this.viewerTriggers, function (el, index) {
       el.addEventListener('click', function (e) {
         e.preventDefault()
         _self.handleClickTrigger(index)
@@ -684,11 +684,11 @@ SEJU.SHARED.IMAGE_VIEWER = {
 }
 
 window.onload = function () {
-  SEJU.SHARED.HOME_MV_SLIDER.init()
-  SEJU.SHARED.HOME_CONTROL.init()
-  SEJU.SHARED.CONTACT_CONTROL.init()
-  SEJU.SHARED.ENTRY_CONTROL.init()
-  SEJU.SHARED.SP_NAV.init()
-  SEJU.SHARED.IMAGE_VIEWER.init()
-  // new SEJU.SHARED.INFINITE_SCROLL()
+  RARU.SHARED.HOME_MV_SLIDER.init()
+  RARU.SHARED.HOME_CONTROL.init()
+  RARU.SHARED.CONTACT_CONTROL.init()
+  RARU.SHARED.ENTRY_CONTROL.init()
+  RARU.SHARED.SP_NAV.init()
+  RARU.SHARED.IMAGE_VIEWER.init()
+  // new RARU.SHARED.INFINITE_SCROLL()
 }

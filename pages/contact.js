@@ -21,8 +21,8 @@ const Contact = () => {
 
   useEffect(() => {
     // script.jsの内容はNext.jsのフォーム処理と競合する可能性があるため削除またはコメントアウト
-    // if (typeof window !== 'undefined' && window.SEJU && window.SEJU.SHARED && window.SEJU.SHARED.CONTACT_CONTROL) {
-    //   window.SEJU.SHARED.CONTACT_CONTROL.init();
+    // if (typeof window !== 'undefined' && window.RARU && window.RARU.SHARED && window.RARU.SHARED.CONTACT_CONTROL) {
+    //   window.RARU.SHARED.CONTACT_CONTROL.init();
     // }
   }, []);
 
@@ -76,9 +76,9 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>contact | seju - GROVE株式会社</title>
+        <title>contact | raru - GROVE株式会社</title>
         <meta name="description" content="SNSプロモーションのご依頼や、メディア取材/出演、イベント出演、所属希望などに関するお問い合わせはこちら。" />
-        <link rel="canonical" href="https://seju.tokyo/contact/" />
+        <link rel="canonical" href="https://raru.tokyo/contact/" />
       </Head>
       <div id="jsi-contact" className="sju-page contact contact-page">
         <div className="sju-page-inner">

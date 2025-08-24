@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
-Theme Name: seju-web
-Description: seju for web site theme
+Theme Name: raru-web
+Description: raru for web site theme
 Author: GROVE inc.
 Version: 1.0.0
 */
@@ -713,7 +713,7 @@ textarea { padding: 12px 20px 12px; }
  @media all and (max-width: 1120px) { .talents-detail-aside { width: 200px; } }
  @media all and (max-width: 1023px) { .talents-detail-aside { display: none; } }
 
-.talents-detail-info-right { flex-basis: 100%; padding-left: 124px; }
+.talents-detail-info-right { flex: 1; padding-left: 124px; }
  @media all and (max-width: 1900px) { .talents-detail-info-right { padding-left: 100px; } }
  @media all and (max-width: 1680px) { .talents-detail-info-right { padding-left: 70px; } }
  @media all and (max-width: 1520px) { .talents-detail-info-right { padding-left: 56px; } }
