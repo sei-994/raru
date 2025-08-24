@@ -37,40 +37,6 @@
           "event": "大塚製薬ポカリスエット　バスケ部と合唱部篇　バスケ部員役エキストラ"
         }
       ]
-    },
-    {
-      "id": 5,
-      "name": "テスト",
-      "slug": "test-slag",
-      "image": "/uploads/talents/1756012588468-RARU.png",
-      "profile": "モデル、俳優として活動中。",
-      "mv_images": [
-        "/uploads/talents/1756012588470-IMG_1044.JPG",
-        "/uploads/talents/1756012588491-IMG_1043.JPG",
-        "/uploads/talents/1756012588504-IMG_1042.JPG",
-        "/uploads/talents/1756012588512-IMG_1041.JPG"
-      ],
-      "instagram": "https://www.instagram.com/raru.official.tokyo/",
-      "tiktok": "https://www.tiktok.com/@avec891",
-      "birthdate": "2025-08-04",
-      "birthplace": "東京都",
-      "height": "173",
-      "hobby": "カフェ巡り",
-      "skill": "サッカー",
-      "history": [
-        {
-          "year": "2023年3月",
-          "event": "IFBCフリースタイルバスケ全国大会ベスト16"
-        },
-        {
-          "year": "2025年",
-          "event": "SONY バスケットボール選手役出演"
-        },
-        {
-          "year": "2025年",
-          "event": "大塚製薬ポカリスエット バスケ部員役エキストラ"
-        }
-      ]
     }
   ]
 }
