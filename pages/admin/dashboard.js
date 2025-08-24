@@ -120,7 +120,7 @@ const AdminDashboard = () => {
           {/* Text fields ... */}
           <div className="mb-3"><label>名前</label><input type="text" name="name" value={talentForm.name} onChange={handleTalentChange} className="form-control" required /></div>
           <div className="mb-3"><label>スラッグ</label><input type="text" name="slug" value={talentForm.slug} onChange={handleTalentChange} className="form-control" required /></div>
-          <div className="mb-3"><label>生年月日</label><input type="text" name="birthdate" value={talentForm.birthdate} onChange={handleTalentChange} className="form-control" /></div>
+          <div className="mb-3"><label>生年月日</label><input type="date" name="birthdate" value={talentForm.birthdate} onChange={handleTalentChange} className="form-control" /></div>
           <div className="mb-3"><label>出身地</label><input type="text" name="birthplace" value={talentForm.birthplace} onChange={handleTalentChange} className="form-control" /></div>
           <div className="mb-3"><label>身長</label><input type="text" name="height" value={talentForm.height} onChange={handleTalentChange} className="form-control" /></div>
           <div className="mb-3"><label>趣味</label><input type="text" name="hobby" value={talentForm.hobby} onChange={handleTalentChange} className="form-control" /></div>
