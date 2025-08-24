@@ -202,7 +202,7 @@ html, body { height: 100%; overflow-y: auto; }
 .sju-nav-item { position: relative; display: inline-flex; line-height: 1; font-size: 28px; color: #000000; font-family: brandon-grotesque; font-weight: 500; border-bottom: 2px solid rgba(255, 255, 255, 0); white-space: nowrap; transition: 0.24s; }
  @media all and (max-width: 1279px) { .sju-nav-item { font-size: 24px; } }
  @media all and (max-width: 1023px) { .sju-nav-item { font-size: 22px; } }
- @media all and (max-width: 767px) { .sju-nav-item { font-size: 22px; } }
+ @media all and (max-width: 767px) { .sju-nav-item { font-size: 40px; } }
 .sju-nav-item:after { content: ''; display: block; position: absolute; bottom: 4px; left: 0; width: 100%; height: 2px; background-color: rgba(255, 255, 255, 0); transition: 0.24s; }
  @media all and (max-width: 767px) { .sju-nav-item:after { bottom: 0; } }
 .sju-nav-item.is-active { color: #95bbd3; }
@@ -495,7 +495,6 @@ textarea { padding: 12px 20px 12px; }
 }
 
 .about-mv-body { text-align: center; opacity: 0; transition: opacity 0.36s cubic-bezier(0.7, 0, 0.84, 0); font-size: 24px; line-height: 1.8; font-family: 'Noto Serif JP', serif; color: #ffffff; }
-@media all and (max-width: 767px) { .about-mv-body { font-size: 16px; } }
 .about-mv-body img { max-height: 500px; height: 700px; width: auto; }
  @.next/server/pages/media.js screen and (max-height: 860px) { .about-mv-body img { height: 460px; } }
  @.next/server/pages/media.js screen and (max-height: 800px) { .about-mv-body img { height: 440px; } }
