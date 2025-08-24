@@ -2034,7 +2034,7 @@ textarea {
   background: no-repeat center;
   background-size: cover;
   opacity: 0;
-  filter: blur(2.6em);
+  filter: blur(1em);
   transform: translate3d(-50%, -50%, 0) scale(1.15);
   border-radius: 100%;
   backface-visibility: hidden;
@@ -2043,7 +2043,7 @@ textarea {
 }
 @media all and (max-width: 767px) {
   .about-mv-figure {
-    filter: blur(3.2em);
+    filter: blur(1.5em);
   }
 }
 
@@ -2053,33 +2053,21 @@ textarea {
 }
 
 .about-mv-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  flex-basis: 100%;
-  padding-top: 100px;
-}
-@media screen and (max-height: 920px) {
-  .about-mv-container {
-    padding-top: 64px;
-  }
-}
-@media screen and (max-height: 800px) {
-  .about-mv-container {
-    padding-top: 56px;
-  }
-}
-@media all and (max-width: 767px) {
-  .about-mv-container {
-    padding-top: 40px;
-  }
 }
 
 .about-mv-body {
   text-align: center;
   opacity: 0;
   transition: opacity 0.36s cubic-bezier(0.7, 0, 0.84, 0);
+  font-size: 24px;
+  line-height: 1.8;
+  font-family: 'Noto Serif JP', serif;
+  color: #ffffff;
 }
 .about-mv-body img {
   max-height: 500px;
@@ -2218,7 +2206,7 @@ textarea {
 
 .about-mv-symbol {
   position: absolute;
-  top: 20%;
+  top: 50%;
   right: 7%;
   transform: translateY(-50%);
   max-width: 235px;
@@ -2230,18 +2218,15 @@ textarea {
   .about-mv-symbol {
     right: 5%;
     min-width: 120px;
-    display: none;
   }
 }
 @media all and (max-width: 767px) {
   .about-mv-symbol {
-    position: absolute;
     top: 64px;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100px;
     max-width: 100px;
-    display: none;
   }
 }
 @media all and (max-width: 374px) {
@@ -2317,7 +2302,6 @@ textarea {
   flex-wrap: wrap;
   margin-left: -16px;
   margin-right: -16px;
-  margin-top: -28px;
 }
 @media all and (max-width: 1023px) {
   .topics-card-list {
@@ -2759,6 +2743,15 @@ textarea {
     padding-top: 100%;
   }
 }
+
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .talent-card-thumbnail-caption {
   position: absolute;
   top: 50%;
@@ -2899,10 +2892,10 @@ textarea {
 
 .talents-detail-mv-caption {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  width: 70px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  padding: 0 20px;
   font-size: 50px;
   line-height: 1;
   font-family: 'brandon-grotesque';
@@ -2966,6 +2959,8 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 .talents-detail-mv-inner .talents-detail-mv-list > li figure img {
   position: absolute;
@@ -2978,11 +2973,8 @@ textarea {
 .talents-detail-mv-inner .talents-detail-mv-list > li figure, .talents-detail-mv-inner .talents-detail-mv-list > li img {
   user-select: none;
 }
-.talents-detail-mv-inner .talents-detail-mv-list > li.is-active figure {
+.talents-detail-mv-inner .talents-detail-mv-list > li.is-active {
   opacity: 1;
-  filter: blur(0);
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.52s 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.42s 0.5s ease-out, filter 0.4s 0.5s ease-out;
 }
 
 .talents-detail-mv-contact {
@@ -3152,8 +3144,8 @@ textarea {
   opacity: 0.8;
 }
 .talents-detail-sns-link img {
-  width: 100%;
-  height: auto;
+  width: 24px;
+  height: 24px;
 }
 
 .talents-detail-aside {
@@ -3770,13 +3762,65 @@ textarea {
   padding-top: 56.25%;
   max-width: 700px;
 }
-.youtube iframe{ position: absolute; top: 0; right: 0; width: 100% !important; height: 100% !important;}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
 
-@media all and (min-width: 1901px) {
-  .sju-aside-layout {
-    max-width: 1600px;
-  }
-  .talent-card-list.col-3 > li {
-    width: 25%;
-  }
+.sju-page-inner {
+  padding-top: 141px;
+}
+
+.topics-page .sju-page-inner {
+  padding-top: 141px;
+}
+
+.contact-page .sju-page-inner {
+  padding-top: 141px;
+}
+
+.talents-detail-page .sju-page-inner {
+  padding-top: 141px;
+}
+
+/* --- Custom Fixes --- */
+/* 1. Talent Name Display Fix */
+.talents-detail-mv-caption {
+  writing-mode: horizontal-tb !important;
+  /* Important to override inline styles if any */
+  transform: none !important;
+  width: auto !important;
+  /* Let it size naturally */
+  text-align: center;
+  padding: 10px;
+  position: static;
+  /* Override absolute positioning from mobile view */
+  background: none;
+  /* Override background from mobile view */
+}
+
+/* 2. SNS Logo Size Fix */
+.talents-detail-sns-list .talents-detail-sns-link img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* 3. Carousel Animation Fix */
+.talents-detail-mv-list > li {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.talents-detail-mv-list > li.is-active {
+  opacity: 1;
+  z-index: 2;
+  /* Ensure active slide is on top */
 }
