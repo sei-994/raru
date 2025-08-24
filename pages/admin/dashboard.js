@@ -9,7 +9,7 @@ const AdminDashboard = () => {
 
   // Talent state
   const [talentForm, setTalentForm] = useState({
-    name: '', slug: '', birthdate: '', birthplace: '', height: '',
+    name_ja: '', name_en: '', slug: '', birthdate: '', birthplace: '', height: '',
     hobby: '', skill: '', profile: '', history: '', instagram: '', tiktok: ''
   });
   const [mainImageFile, setMainImageFile] = useState(null);
@@ -112,7 +112,7 @@ const AdminDashboard = () => {
 
       if (res.ok) {
         alert('タレントを追加しました');
-        setTalentForm({ name: '', slug: '', birthdate: '', birthplace: '', height: '', hobby: '', skill: '', profile: '', history: '', instagram: '', tiktok: '' });
+        setTalentForm({ name_ja: '', name_en: '', slug: '', birthdate: '', birthplace: '', height: '', hobby: '', skill: '', profile: '', history: '', instagram: '', tiktok: '' });
         setMainImageFile(null);
         setCarouselImageFiles([]);
         document.getElementById('mainImageInput').value = null;
@@ -157,7 +157,8 @@ const AdminDashboard = () => {
         <h2 className="my-4">タレント追加</h2>
         <form onSubmit={handleAddTalent}>
           {/* Text fields ... */}
-          <div className="mb-3"><label>名前</label><input type="text" name="name" value={talentForm.name} onChange={handleTalentChange} className="form-control" required /></div>
+          <div className="mb-3"><label>日本語名</label><input type="text" name="name_ja" value={talentForm.name_ja} onChange={handleTalentChange} className="form-control" required /></div>
+          <div className="mb-3"><label>英字名</label><input type="text" name="name_en" value={talentForm.name_en} onChange={handleTalentChange} className="form-control" /></div>
           <div className="mb-3"><label>スラッグ</label><input type="text" name="slug" value={talentForm.slug} onChange={handleTalentChange} className="form-control" required /></div>
           <div className="mb-3"><label>生年月日</label><input type="date" name="birthdate" value={talentForm.birthdate} onChange={handleTalentChange} className="form-control" /></div>
           <div className="mb-3"><label>出身地</label><input type="text" name="birthplace" value={talentForm.birthplace} onChange={handleTalentChange} className="form-control" /></div>
@@ -192,7 +193,8 @@ const AdminDashboard = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>名前</th>
+                <th>日本語名</th>
+                <th>英字名</th>
                 <th>スラッグ</th>
                 <th>アクション</th>
               </tr>
@@ -201,7 +203,8 @@ const AdminDashboard = () => {
               {talents.map(talent => (
                 <tr key={talent.id}>
                   <td>{talent.id}</td>
-                  <td>{talent.name}</td>
+                  <td>{talent.name_ja}</td>
+                  <td>{talent.name_en}</td>
                   <td>{talent.slug}</td>
                   <td>
                     <button 

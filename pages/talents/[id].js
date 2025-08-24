@@ -66,7 +66,7 @@ const TalentDetail = () => {
                     <dd>
                       <dl className="talents-detail-profile-item">
                         <dt>名前</dt>
-                        <dd>{talent.name}</dd>
+                        <dd>{talent.name_ja}</dd>
                       </dl>
                     </dd>
                     <dd>

@@ -16,13 +16,13 @@ export default function handler(req, res) {
   } else if (req.method === 'POST') {
     try {
       const {
-        name, slug, birthdate, birthplace, height, hobby, skill, 
+        name_ja, name_en, slug, birthdate, birthplace, height, hobby, skill, 
         profile, image, mv_images, history, instagram, tiktok
       } = req.body;
 
       // Basic validation
-      if (!name || !slug) {
-        return res.status(400).json({ message: '名前とスラッグは必須です。' });
+      if (!name_ja || !slug) {
+        return res.status(400).json({ message: '日本語名とスラッグは必須です。' });
       }
 
       const fileContents = fs.readFileSync(talentsFilePath, 'utf8');
@@ -39,7 +39,8 @@ export default function handler(req, res) {
 
       const newTalent = {
         id: data.talents.length > 0 ? Math.max(...data.talents.map(t => t.id)) + 1 : 1,
-        name,
+        name_ja,
+        name_en,
         slug,
         image: image || '',
         profile: profile || '',
