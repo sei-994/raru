@@ -18,18 +18,18 @@ export default function Document() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <title>RARU</title>
         <meta name="description" content="「私らしさ」は、円を描く。今をときめくZ世代のプロダクション＆メディア" />
-        <link rel="canonical" href="https://raru.tokyo/" />
+        <link rel="canonical" href="https://raru-official.jp/" />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="RARU" />
         <meta property="og:description" content="「私らしさ」は、円を描く。今をときめくZ世代のプロダクション＆メディア" />
-        <meta property="og:url" content="https://raru.tokyo/" />
+        <meta property="og:url" content="https://raru-official.jp/" />
         <meta property="og:site_name" content="RARU" />
-        <meta property="og:image" content="/images/RARU ロゴ.png" />
+        <meta property="og:image" content="https://raru-official.jp/images/raru-logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
-        <meta name="twitter:image" content="/images/RARU ロゴ.png" />
+        <meta name="twitter:image" content="https://raru-official.jp/images/raru-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content=" @RaruTokyo" />
         {/* Typekit Fonts */}
